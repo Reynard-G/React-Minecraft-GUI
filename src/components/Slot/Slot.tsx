@@ -42,7 +42,7 @@ const Slot: React.FC<SlotProps> = ({ item, isOutput }) => {
 
   return (
     <td className={isOutput ? "slot" : ""}>
-      <div className="amount">{item.amount}</div>
+      {item.amount > 1 && <div className="amount">{item.amount}</div>}
       {item.enchanted && <Glint maskSrc={item.icon} />}
       <img alt="Item Icon" src={item.icon} width="32" height="32" />
       {tooltipPosition.top !== null && tooltipPosition.left !== null && (
