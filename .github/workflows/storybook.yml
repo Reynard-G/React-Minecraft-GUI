@@ -1,24 +1,23 @@
-name: Build and Deploy
-on: 
+name: Build and Publish storybook to GitHub Pages
+
+on:
   push:
-    paths: ["src/components/**"]
+    branches:
+      - "main"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build-and-deploy:
+  deploy:
+    environment:
+      name: RMGui-storybook
+      url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
-        with:
-          persist-credentials: false
-      - name: Install and Build 🔧
-        run: |
-          npm install
-          npm run build-storybook
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: main
-          FOLDER: docs-build
-          CLEAN: true
-          TARGET_FOLDER: docs
+    - id: build-publish
+      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
+      with:
+        path: build
