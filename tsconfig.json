@@ -16,10 +16,12 @@
     "emitDeclarationOnly": true,
     "rootDir": "src",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": "./",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@constants/*": ["./src/constants/*"],
-      "@lib/*": ["./src/lib/*"],
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@lib/*": ["src/lib/*"],
+      "@assets/*": ["src/assets/*"],
     }
   },
   "include": ["src"],

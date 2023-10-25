@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Tooltip from "@components/Tooltip";
+import Glint from "@components/Glint";
 
 interface RecipeItem {
   name: string;
@@ -42,21 +43,7 @@ const Slot: React.FC<SlotProps> = ({ item, isOutput }) => {
   return (
     <td className={isOutput ? "slot" : ""}>
       <div className="amount">{item.amount}</div>
-      {item.enchanted && (
-        <img
-          alt="Glint"
-          src="/glint-32x32.gif"
-          width="32"
-          height="32"
-          className="enchanted"
-          style={{
-            WebkitMaskImage: `url(${item.icon})`,
-            maskImage: `url(${item.icon})`,
-            WebkitMaskSize: "32px 32px",
-            maskSize: "32px 32px"
-          }}
-        />
-      )}
+      {item.enchanted && <Glint maskSrc={item.icon} />}
       <img alt="Item Icon" src={item.icon} width="32" height="32" />
       {tooltipPosition.top !== null && tooltipPosition.left !== null && (
         <div

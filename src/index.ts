@@ -1,1 +1,1 @@
-export { CraftingTable, Grid, Gui, Slot, Tooltip } from "./components";
+export { CraftingTable, Grid, Gui, Slot, Tooltip, Glint } from "./components";
