@@ -1,0 +1,39 @@
+{
+  "name": "minecraft-gui-react",
+  "version": "1.0.0",
+  "description": "A React UI Library for Minecraft GUIs",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reynard-G/react-minecraft-gui"
+  },
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "author": "MilkLegend",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/react": "^18.2.31",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.1.4",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
