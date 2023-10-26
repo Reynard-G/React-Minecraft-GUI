@@ -12,7 +12,7 @@ import packageJson from "./package.json" assert { type: "json" };
 export default [
   {
     input: "src/index.ts",
-    external: ['react-dom'],
+    external: ['react-dom', /\.png$/, /\.webp$/, /\.gif$/],
     output: [
       {
         file: packageJson.main,

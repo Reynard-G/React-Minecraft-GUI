@@ -2,7 +2,7 @@
   "name": "minecraft-gui-react",
   "version": "1.0.0",
   "description": "A React UI Library for Minecraft GUIs",
-  "type": "module",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/Reynard-G/react-minecraft-gui"
