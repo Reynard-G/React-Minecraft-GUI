@@ -1,21 +1,23 @@
-name: Build and Publish storybook to GitHub Pages
-
+name: Storybook
 on:
   push:
     branches:
-      - "master"
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+      - master
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - id: build-publish
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build-storybook
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          path: build
+          branch: gh-pages
+          folder: storybook-static
