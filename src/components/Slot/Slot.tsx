@@ -4,7 +4,7 @@ import Glint from "@components/Glint";
 
 interface RecipeItem {
   name: string;
-  lore: string[];
+  lore?: string[];
   icon: string;
   enchanted?: boolean;
   amount: number;

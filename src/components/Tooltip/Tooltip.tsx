@@ -5,7 +5,7 @@ import "./Tooltip.css";
 
 export interface TooltipProps {
   title: string;
-  text: string[];
+  text?: string[];
 }
 
 const isEmptyArray = (array: string[]) => {
@@ -22,7 +22,7 @@ const isEmptyArray = (array: string[]) => {
 };
 
 const Tooltip: React.FC<TooltipProps> = ({ title, text }) => {
-  const lines = useMemo(() => text, [text]); // Use useMemo to memoize the 'lines' variable
+  const lines = useMemo(() => text || [], [text]); // Use useMemo to memoize the 'lines' variable
   return (
     <div className="mctooltip">
       <div className="tooltip-title">{processText(title)}</div>
