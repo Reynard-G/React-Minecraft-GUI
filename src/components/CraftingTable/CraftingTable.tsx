@@ -1,6 +1,7 @@
 import React from "react";
 import Gui from "@components/Gui";
 import Slot from "@components/Slot";
+import Arrow from "../../assets/craftingtable-arrow.webp";
 import "./CraftingTable.css";
 
 export interface CraftingTableProps {
@@ -48,6 +49,7 @@ const CraftingTable: React.FC<CraftingTableProps> = ({ recipe }) => {
         </tbody>
       </table>
       <div className="mcui-arrow">
+        <img src={Arrow} alt="Arrow" />
         <br />
       </div>
       <table className="output">

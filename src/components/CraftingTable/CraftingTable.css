@@ -148,7 +148,6 @@
 }
 
 .minecraft-inventory > .mcui-arrow {
-  background: url(../../assets/craftingtable-arrow.webp) no-repeat;
   width: 32px;
   height: 26px;
   margin-left: 4px;

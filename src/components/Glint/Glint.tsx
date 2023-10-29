@@ -1,5 +1,5 @@
 import React from "react";
-import GlintGif from "@assets/glint-160x160.webp";
+import GlintGif from "../../assets/glint-32x32.webp";
 
 export interface GlintProps {
   maskSrc: string;
