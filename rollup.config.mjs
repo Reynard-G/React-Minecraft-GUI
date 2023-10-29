@@ -14,7 +14,6 @@ import packageJson from "./package.json" assert { type: "json" };
 export default [
   {
     input: "src/index.ts",
-    external: ['react-dom'],
     output: [
       {
         file: packageJson.main,
@@ -36,13 +35,12 @@ export default [
       resolve({
         browser: true,
       }),
-      commonjs({
-        
-      }),
+      commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
-        inject: true,
+        extract: true,
         minimize: true,
+        extensions: [".css"],
       }),
       externalAssets("src/assets/*"),
       terser()
@@ -52,6 +50,6 @@ export default [
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
-    external: [/\.css$/, /\.(png|jpe?g|gif|webp)$/i],
+    external: ['react', 'react-dom', /\.css$/],
   },
 ];
