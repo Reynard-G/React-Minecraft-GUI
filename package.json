@@ -1,6 +1,6 @@
 {
   "name": "minecraft-gui-react",
-  "version": "0.1.5-canary.1",
+  "version": "0.1.5-canary.2",
   "description": "A React UI Library for Minecraft GUIs",
   "sideEffects": false,
   "repository": {
